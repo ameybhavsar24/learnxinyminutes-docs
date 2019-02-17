@@ -18,6 +18,7 @@ function setup() {
 function draw() {
 // the draw function gets called every single frame. This means that for a frameRate(30) it would get called 30 times per second.
 }
+//you do not need to call these functions, as they get executed themselves.
 
 // the following code explains all features
 
@@ -29,6 +30,7 @@ background(128); // changes the background color of the canvas, can accept rgb v
 }
 
 function draw() {
+// beginning of draw loop
 
 ellipse(10,10, 50,50); // creates a ellipse at the 10px from the left and 10px from the top with width adn height as 50 each, so its basically a cirle.
 //remember in p5.js the origin is at the top-left corner of the canvas
@@ -48,7 +50,37 @@ ellipse(10,10, 50,50); // creates a ellipse at the 10px from the left and 10px f
   // mouseX is the x-coordinate of the mouse's current position and mouseY is the y-coordinate of the mouse's current position
   
   // the above code creates a circle wherever mouse's current position and fills it either black or white based on the mouseIsPressed
+
+// end of draw loop
 }
+
+
+//To add a image use this 
+
+function setup() {
+  createCanvas(400, 240);
+  loadImage('cat.jpg', drawCat);
+}
+function drawCat(img) {
+  image(img, 0, 0);
+}
+
+//remeber every p5js function has a callback as its last argument
+
+
+//the preload function
+
+var img;
+function preload() { // it makes sure that all the code in it runs, only after which the setup() can run
+  img = loadImage('cat.jpg');
+}
+
+function setup() {
+  createCanvas(400, 240);
+  image(img, 0, 0);
+}
+
+
 
 ```
 ## Further Reading
